@@ -23,3 +23,7 @@ class DatabaseConfiguration(configuration.Configuration):
     @property
     def password(self):
         return self.get_section(constant.CONFIG_SECTION_DATABASE)[constant.DB_PASSWORD]
+    
+    @property
+    def driver(self):
+        return self.get_section(constant.CONFIG_SECTION_DATABASE)[constant.DB_DRIVER_NAME]
