@@ -14,10 +14,14 @@ import pandas as pd
 # print(ds.host)
 
 
-# obj_sql = mssql.mssql_db(None)
+obj_sql = mssql.mssql_db(None)
+
 # conn = obj_sql.get_connection()
 # data = pd.read_sql_query("select top 1 * from [knowHow].[dbo].[tModels]", conn)
 # print(data)
 
 # data2 = obj_sql.get_data("select top 1 * from [knowHow].[dbo].[tModels]")
 # print(data2)
+
+
+obj_sql.insert_data("INSERT INTO KnowHow.dbo.tModels (Name, ModelName, Description, CreatedBy, CreatedOn, ModifiedBy, ModifiedOn, IsActive, CategoryId) VALUES('test1', 'test-1', 'test1 desc', 10, getdate(), NULL, '', 0, 1);")

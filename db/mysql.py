@@ -3,11 +3,11 @@ from db import connection
 from  utilities import constant
 import pandas as pd
 
-class mssql_db:
-    '''This core class provide supporting function (CRUD Operations) for MS SQL Server.'''    
+class mysql_db:
+    '''This core class provide supporting function (CRUD Operations) for MySQL Server.'''
     def __init__(self, connection_str):
         if connection_str is None:
-            self.conn_str = connection.connection_string(constant.DB_TYPE_MSSQL_SERVER).get_connection()
+            self.conn_str = connection.connection_string(constant.DB_TYPE_MYSQL_SERVER).get_connection()
         else:
             self.conn_str = connection_str
 
