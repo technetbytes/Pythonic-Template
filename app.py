@@ -1,11 +1,23 @@
 from config import configuration
 from config import database
+from db import mssql
+import pandas as pd
+
 
 # use configuration class get DATABASE Section from ini file
-config = configuration.Configuration(None)
-db_config = config.get_section("DATABASE")
-print(db_config['HOST'])
+# config = configuration.Configuration(None)
+# db_config = config.get_section("DATABASE")
+# print(db_config['HOST'])
 
 # use DatabaseConfiguration class user directly get DATABASE host using property
-ds = database.DatabaseConfiguration(None)
-print(ds.host)
+# ds = database.DatabaseConfiguration(None)
+# print(ds.host)
+
+
+# obj_sql = mssql.mssql_db(None)
+# conn = obj_sql.get_connection()
+# data = pd.read_sql_query("select top 1 * from [knowHow].[dbo].[tModels]", conn)
+# print(data)
+
+# data2 = obj_sql.get_data("select top 1 * from [knowHow].[dbo].[tModels]")
+# print(data2)

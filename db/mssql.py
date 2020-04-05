@@ -10,8 +10,20 @@ class mssql_db:
         else:
             self.conn_str = connection_str
 
-    def get_engine():
+    def get_engine(self):
         return create_engine(self.conn_str)
 
-    def get_connection():
-        return get_engine().connect()
+    def get_connection(self):
+        return self.get_engine().connect()
+
+    def get_data(self, query):
+        return pd.read_sql_query(query, self.get_connection())
+    
+    def insert_data(self):
+        pass
+    
+    def update_data(self):
+        pass
+    
+    def delete_data(self):
+        pass
