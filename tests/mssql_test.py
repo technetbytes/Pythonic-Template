@@ -12,3 +12,6 @@ def connect_mssql():
 class MyTest(unittest.TestCase):
     def test(self):
         self.assertEqual(connect_mssql(), True)
+        
+if __name__ == '__main__':
+    unittest.main()
