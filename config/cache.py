@@ -3,7 +3,8 @@ from utilities import constant
 from config import configuration
 
 class CacheConfiguration(configuration.Configuration):
-
+    '''Using this class we load cache configuration parameters'''
+    
     @property
     def host(self):
         return self.get_section(constant.CONFIG_SECTION_CACHE)[constant.CACHE_HOST]
