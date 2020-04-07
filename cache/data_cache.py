@@ -2,7 +2,7 @@ import redis
 from config import cache
 from utilities import constant
 
-class datadeposit:
+class DataDeposit:
     '''This is cache class that provide a bridge for different type of caches'''
     
     def __init__(self,cache_type):

@@ -2,7 +2,7 @@ import unittest
 from db import mssql
 
 def connect_mssql():
-    obj_sql = mssql.mssql_db(None)
+    obj_sql = mssql.MsSqlDb(None)
     conn = obj_sql.get_connection
     if conn is None:
         return False

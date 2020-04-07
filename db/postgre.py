@@ -3,11 +3,11 @@ from db import connection
 from  utilities import constant
 import pandas as pd
 
-class postgre_db:
+class PostgreDb:
     '''This core class provide supporting function (CRUD Operations) for Postgre Server.'''
     def __init__(self, connection_str):
         if connection_str is None:
-            self.conn_str = connection.connection_string(constant.DB_TYPE_POSTGRESQL).get_connection()
+            self.conn_str = connection.ConnectionString(constant.DB_TYPE_POSTGRESQL).get_connection()
         else:
             self.conn_str = connection_str
 

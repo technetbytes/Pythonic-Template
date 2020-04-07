@@ -1,7 +1,7 @@
 from  utilities import constant
 from config import database
 
-class connection_string:
+class ConnectionString:
     '''Provider database connection string'''
     def __init__(self,db_type):
         self.type = db_type

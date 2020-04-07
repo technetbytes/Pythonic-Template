@@ -10,7 +10,7 @@ import urllib.request
 import cv2
 
 
-class file_manager:
+class FileManager:
 
     '''Using this class user can upload different asset in different repositories'''
 

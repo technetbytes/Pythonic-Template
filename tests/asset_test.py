@@ -2,14 +2,14 @@ import unittest
 from assets import file_storage
 
 def load_config():
-    storage = file_storage.file_manager(None).load_config()
+    storage = file_storage.FileManager(None).load_config()
     if storage is None:
         return False
     else:
         return True
 
 def upload_file():
-    storage = file_storage.file_manager(None).load_config()
+    storage = file_storage.FileManager(None).load_config()
     if storage is None:        
         return False
     else:
@@ -17,7 +17,7 @@ def upload_file():
         return True
 
 def get_file():
-    storage = file_storage.file_manager(None)
+    storage = file_storage.FileManager(None)
     if storage is None:        
         return False
     else:
