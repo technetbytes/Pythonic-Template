@@ -8,17 +8,17 @@ from cache import data_cache
 '''Get configuration data from the .resource/config.ini file'''
 
 # use configuration class get DATABASE Section from ini file
-# config = configuration.Configuration(None)
+config = configuration.Configuration(None)
 # db_config = config.get_section("DATABASE")
 # print(db_config['HOST'])
 
 # use DatabaseConfiguration class user directly get DATABASE host using property
-# ds = database.DatabaseConfiguration(None)
+ds = database.DatabaseConfiguration(None)
 # print(ds.host)
 
 '''Insert & Get record in the database'''
 
-#obj_sql = mssql.mssql_db(None)
+obj_sql = mssql.MsSqlDb(None)
 
 # conn = obj_sql.get_connection()
 # data = pd.read_sql_query("select top 1 * from [knowHow].[dbo].[tModels]", conn)
@@ -31,20 +31,20 @@ from cache import data_cache
 
 '''Set & Read data in the cloud storage'''
 
-#storage = file_storage.file_manager(None)
-#storage.load_config()
+file_manager = file_storage.FileManager(None)
+#file_manager.load_config()
 
-#storage.upload_file("/home/saqib/Pictures/ijmal.png","ijmalbhai")
+#file_manager.upload_file("/home/saqib/Pictures/ijmal.png","ijmalbhai")
 
-#s = storage.get_file_url("ijmalbhai")
+#s = file_manager.get_file_url("ijmalbhai")
 #print(s)
 
-#img = storage.get_image("https://res.cloudinary.com/dnbcbz9eu/image/upload/v1586115769/ijmalbhai.png")
+#img = file_manager.get_image("https://res.cloudinary.com/dnbcbz9eu/image/upload/v1586115769/ijmalbhai.png")
 #print(img)
 
 '''Set & Read data in the cache'''
 
-#redis_cache = data_cache.datadeposit(None)
+redis_cache = data_cache.DataDeposit(None)
 #redis_cache.load_config()
 #redis_cache.set_item("Afa","Hello world")
 #print(redis_cache.get_item("Afa"))
