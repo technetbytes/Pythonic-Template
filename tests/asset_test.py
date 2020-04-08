@@ -28,13 +28,13 @@ class AssetTest(unittest.TestCase):
     '''This is Asset Test Class'''
     
     def test_loadconfig(self):
-        self.assertEqual(load_config(), True)
+        self.assertTrue(load_config(), True)
     
     def test_uploadfile(self):
-        self.assertEqual(upload_file(), True)
+        self.assertTrue(upload_file(), True)
             
     def test_get_file(self):
-        self.assertEqual(get_file(), True)
+        self.assertTrue(get_file(), True)
         
 
 if __name__ == '__main__':
