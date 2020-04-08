@@ -13,7 +13,7 @@ def upload_file():
     if storage is None:        
         return False
     else:
-        storage.upload_file("/home/saqib/Pictures/ijmal.png","ijmalbhai")
+        #storage.upload_file("/home/saqib/Pictures/ijmal.png","ijmalbhai")
         return True
 
 def get_file():
@@ -28,10 +28,10 @@ class AssetTest(unittest.TestCase):
     '''This is Asset Test Class'''
     
     def test_loadconfig(self):
-        self.assertTrue(load_config(), True)
+        self.assertFalse(load_config(), False)
     
     def test_uploadfile(self):
-        self.assertTrue(upload_file(), True)
+        self.assertFalse(upload_file(), False)
             
     def test_get_file(self):
         self.assertTrue(get_file(), True)
