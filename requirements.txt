@@ -19,4 +19,4 @@ cloudinary==1.20.0
 
 ## Others
 numpy==1.14.2
-opencv-python==3.4.2
+opencv-python==4.2.0.34
