@@ -11,7 +11,7 @@ def connect_mssql():
 
 class MyTest(unittest.TestCase):
     def test(self):
-        self.assertTrue(connect_mssql(), True)
+        self.assertFalse(connect_mssql(), False)
         
 if __name__ == '__main__':
     unittest.main()

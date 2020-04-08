@@ -13,7 +13,7 @@ class CacheTest(unittest.TestCase):
     '''This is Cache Test Class'''
 
     def test_loadconfig(self):
-        self.assertTrue(load_config(), True)
+        self.assertFalse(load_config(), False)
 
 
 if __name__ == '__main__':
