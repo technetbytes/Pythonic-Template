@@ -11,9 +11,7 @@ import cv2
 
 
 class FileManager:
-
     '''Using this class user can upload different asset in different repositories'''
-
     def __init__(self, storage_type):
         if storage_type is None:
             self.storage_type = constant.STORAGE_TYPE_CLOUDINARY
