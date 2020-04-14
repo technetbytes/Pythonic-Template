@@ -4,21 +4,22 @@ from db import mssql
 import pandas as pd
 from assets import file_storage
 from cache import data_cache 
+from bridge import databse_bridge
 
 '''Get configuration data from the .resource/config.ini file'''
 
 # use configuration class get DATABASE Section from ini file
-config = configuration.Configuration(None)
+#config = configuration.Configuration(None)
 # db_config = config.get_section("DATABASE")
 # print(db_config['HOST'])
 
 # use DatabaseConfiguration class user directly get DATABASE host using property
-ds = database.DatabaseConfiguration(None)
+#ds = database.DatabaseConfiguration(None)
 # print(ds.host)
 
 '''Insert & Get record in the database'''
 
-obj_sql = mssql.MsSqlDb(None)
+#obj_sql = mssql.MsSqlDb(None)
 
 # conn = obj_sql.get_connection()
 # data = pd.read_sql_query("select top 1 * from [knowHow].[dbo].[tModels]", conn)
@@ -31,7 +32,7 @@ obj_sql = mssql.MsSqlDb(None)
 
 '''Set & Read data in the cloud storage'''
 
-file_manager = file_storage.FileManager(None)
+#file_manager = file_storage.FileManager(None)
 #file_manager.load_config()
 
 #file_manager.upload_file("/home/saqib/Pictures/ijmal.png","ijmalbhai")
@@ -44,7 +45,18 @@ file_manager = file_storage.FileManager(None)
 
 '''Set & Read data in the cache'''
 
-redis_cache = data_cache.DataDeposit(None)
+#redis_cache = data_cache.DataDeposit(None)
 #redis_cache.load_config()
 #redis_cache.set_item("Afa","Hello world")
 #print(redis_cache.get_item("Afa"))
+
+
+def main():
+    print("Start Pythonic-Template Application")
+    bridge = databse_bridge.DbBridge()
+    print(bridge.get_application())
+    bridge.load_db()
+    print(bridge.get_data("select top 1 * from [knowHow].[dbo].[tModels]"))
+    
+if __name__ == "__main__":
+    main()
