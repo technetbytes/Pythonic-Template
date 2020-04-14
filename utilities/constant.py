@@ -16,6 +16,10 @@ ASSET_CLOUD_NAME = "CLOUD_NAME"
 ASSET_API_KEY = "API_KEY"
 ASSET_API_SECRET = "API_SECRET"
 
+APP_ENVIRONMENT = "ENVIRONMENT"
+APP_DEBUG = "DEBUG"
+APP_DATABASE = "DATABASE"
+
 STORAGE_TYPE_S3 = "AWS_S3"
 """
 For Storage Type STORAGE_TYPE_IMGIX value is "IMGIX".
@@ -36,23 +40,30 @@ LOG_ERRORS = "ERRORS"
 """
 Logging Type LOG_ERRORS value is "ERRORS".
 """
+
+CONFIG_SECTION_APP = "APP"
+"""
+To read application configuration from system using Constant CONFIG_SECTION_APP to access the Application level settings.
+
+CONFIG_SECTION_DATABASE = "DATABASE"
+"""
 CONFIG_SECTION_DATABASE = "DATABASE"
 """
 To read database crediental from the configuration from system using Constant CONFIG_SECTION_DATABASE to access the DB settings.
 
 CONFIG_SECTION_DATABASE = "DATABASE"
 """
-CONFIG_SECTION_CACHE = "REDIS"
+CONFIG_SECTION_CACHE = "CACHE"
 """
 To read Temp cache storge setting from the configuration file system utilize CONFIG_SECTION_CACHE constant.
 
-CONFIG_SECTION_CACHE = "REDIS"
+CONFIG_SECTION_CACHE = "CACHE"
 """
-CONFIG_SECTION_ASSET = "CLOUDINARY"
+CONFIG_SECTION_ASSET = "FILESTORAGE"
 """
 To read asset storage setting from the config file framework using CONFIG_SECTION_ASSET constant to access.
 
-CONFIG_SECTION_ASSET = "CLOUDINARY"
+CONFIG_SECTION_ASSET = "FILESTORAGE"
 """
 CONFIG_SECTION_LOG = "LOGS"
 """
