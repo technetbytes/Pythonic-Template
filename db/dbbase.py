@@ -6,16 +6,29 @@ class DBCore:
     '''This core database class provide core operation like connection, session and others.'''
     
     def __init__(self, connection):
+        self.engin = None
         self.connection = connection
         self.conn_str = None
         self.current_session = None
     
     def get_engine(self):
-        return create_engine(self.connection)
+        self.engin = create_engine(self.connection)
+        return self.engin
    
     def get_connection(self):
-        return self.get_engine().connect()
+        if self.engin is not None:
+            return self.engin.connect()
+        else:
+            return self.get_engine().connect()
 
+    def begin_transaction(self):
+        if self.engin is not None:
+            self.get_connection().begin()
+    
+    def commit_transaction(self):
+        if self.engin is not None:
+            self.get_connection().commit()
+            
     def get_data(self, query):
         return pd.read_sql_query(query, self.get_connection())
     

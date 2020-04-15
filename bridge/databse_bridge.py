@@ -31,4 +31,4 @@ class DbBridge:
     
     def get_data_forModel(self,model_type):
         if self.db_session is not None:
-            return self.db_session.get_model(model_type)
+            return self.db_session.get_model_all(model_type)
