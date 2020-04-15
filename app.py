@@ -50,13 +50,29 @@ from bridge import databse_bridge
 #redis_cache.set_item("Afa","Hello world")
 #print(redis_cache.get_item("Afa"))
 
-
 def main():
-    print("Start Pythonic-Template Application")
+    #direct_db()
+    orm_model_call()
+
+def direct_db():
+    print("Direct database call ...")
     bridge = databse_bridge.DbBridge()
     print(bridge.get_application())
     bridge.load_db()
     print(bridge.get_data("select top 1 * from [knowHow].[dbo].[tModels]"))
+
+def orm_model_call():
+    print("ORM mapper call ...")
+    bridge = databse_bridge.DbBridge()
+    bridge.load_db()
+    from models import projects
+    projects = bridge.get_data_forModel(projects.Project)
+    print('\n### All Projects:')
+    for prj in projects:
+        print(f'project id {prj.id} with keys {prj.webKey} and {prj.mobileKey}')
+    print("done")
     
 if __name__ == "__main__":
+    print("Start Pythonic-Template Application")
     main()
+    print("End Pythonic-Template Application")

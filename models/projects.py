@@ -5,18 +5,20 @@ Base = declarative_base()
 
 class Project(Base):
     """Data model."""
-    __tablename__ = "tProjects"
-    __table_args__ = {"schema":"dbo"}
+    __tablename__ = "tProjectKeys2"
+    __table_args__ = {"schema":"KnowHow.dbo"}
 
-    ProjectID = Column(Integer, primary_key=True, nullable=False)
-    ProjectName = Column(Text, nullable=False)
-    ProjectDescription = Column(Text, nullable=True)
+    id = Column(Integer, primary_key=True, nullable=False)
+    webKey = Column(Text, nullable=False)
+    mobileKey = Column(Text, nullable=True)
+    '''
     UserID = Column(Integer, nullable=False)
     CreatedBy = Column(Integer, nullable=False)
     CreatedOn = Column(DateTime, nullable=False)
     ModifiedBy = Column(Integer, nullable=False)
     ModifiedOn = Column(Integer, nullable=False)
     IsActive =  Column(Boolean, nullable=False)
+    '''
     
     def __repr__(self):
         return '<Project model {}>'.format(self.id)
