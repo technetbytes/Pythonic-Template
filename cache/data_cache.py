@@ -1,5 +1,5 @@
 import redis
-from config import cache
+from config.cache import CacheConfiguration
 from utilities import constant
 
 class DataDeposit:
@@ -13,7 +13,7 @@ class DataDeposit:
 
     def load_config(self):
         if self.cache_type == constant.CACHE_TYPE_REDIS:
-            config = cache.CacheConfiguration(None)
+            config = CacheConfiguration(None)
             cache_host = config.host
             cache_password = config.password
             cache_port = config.port

@@ -4,7 +4,7 @@ from db import mssql
 import pandas as pd
 from assets import file_storage
 from cache import data_cache 
-from bridge import databse_bridge
+from bridge.databse_bridge import DbBridge
 
 '''Get configuration data from the .resource/config.ini file'''
 
@@ -51,19 +51,19 @@ from bridge import databse_bridge
 #print(redis_cache.get_item("Afa"))
 
 def main():
-    #direct_db()
+    direct_db()
     orm_model_call()
 
 def direct_db():
     print("Direct database call ...")
-    bridge = databse_bridge.DbBridge()
+    bridge = DbBridge()
     print(bridge.get_application())
     bridge.load_db()
     print(bridge.get_data("select top 1 * from [knowHow].[dbo].[tModels]"))
 
 def orm_model_call():
     print("ORM mapper call ...")
-    bridge = databse_bridge.DbBridge()
+    bridge = DbBridge()
     bridge.load_db()
     from models import projects
     projects = bridge.get_data_forModel(projects.Project)

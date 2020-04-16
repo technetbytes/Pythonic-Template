@@ -1,8 +1,8 @@
 import configparser
 from utilities import constant
-from config import configuration
+from config.configuration import Configuration
 
-class CacheConfiguration(configuration.Configuration):
+class CacheConfiguration(Configuration):
     '''Using this class we load cache configuration parameters'''
     
     @property

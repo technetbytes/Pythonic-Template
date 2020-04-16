@@ -1,8 +1,9 @@
 import configparser
 from utilities import constant
-from config import configuration
-
-class DatabaseConfiguration(configuration.Configuration):
+from config.configuration import Configuration
+ 
+class DatabaseConfiguration(Configuration):
+    '''This is database configuration reader class'''
     
     @property
     def host(self):

@@ -1,8 +1,8 @@
 import configparser
 from utilities import constant
-from config import configuration
+from config.configuration import Configuration
 
-class ApplicationConfiguration(configuration.Configuration):
+class ApplicationConfiguration(Configuration):
     '''Using this class we load application configuration parameters'''
     
     @property

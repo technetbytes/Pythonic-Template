@@ -1,12 +1,12 @@
 from db import mssql
-from config import application
+from config.application import ApplicationConfiguration
 from utilities import constant
 
 class DbBridge:
     '''This is cache class that provide a bridge for different type of caches'''
     
     def __init__(self):
-        self.configuration = application.ApplicationConfiguration(None)
+        self.configuration = ApplicationConfiguration(None)
         self.database_type = self.configuration.database
         self.environment = self.configuration.database
         self.debug = self.configuration.database

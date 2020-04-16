@@ -1,9 +1,10 @@
 import configparser
 from utilities import constant
-from config import configuration
+from config.configuration import Configuration
 
-class AssetConfiguration(configuration.Configuration):
+class AssetConfiguration(Configuration):
     ''' Assset Configuration Class'''
+    
     @property
     def cloud_name(self):
         return self.get_section(constant.CONFIG_SECTION_ASSET)[constant.ASSET_CLOUD_NAME]

@@ -1,8 +1,9 @@
 import configparser
 from utilities import constant
-from config import configuration
+from config.configuration import Configuration
 
-class DatabaseConfiguration(configuration.Configuration):
+class LogConfiguration(Configuration):
+    '''This is logger configuration reader class'''
     
     @property
     def log(self):

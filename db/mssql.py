@@ -1,13 +1,13 @@
 from sqlalchemy import create_engine
-from db import connection
+from db.connection import ConnectionString
 from  utilities import constant
-from db import dbbase
+from db.dbbase import DBCore
 
-class MsSqlDb(dbbase.DBCore):
+class MsSqlDb(DBCore):
     '''This core class provide supporting function (CRUD Operations) for MS SQL Server.'''
     
     def __init__(self, connection_str):
         if connection_str is None:
-            dbbase.DBCore.__init__(self,connection.ConnectionString(constant.DB_TYPE_MSSQL_SERVER).get_connection())
+            DBCore.__init__(self,ConnectionString(constant.DB_TYPE_MSSQL_SERVER).get_connection())
         else:
-            dbbase.DBCore.conn = connection_str
+            DBCore.conn = connection_str

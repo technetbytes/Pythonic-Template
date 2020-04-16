@@ -3,7 +3,7 @@
 
 import cloudinary
 from cloudinary.uploader import upload
-from config import asset
+from config.asset import AssetConfiguration
 from utilities import constant
 import numpy as np
 import urllib.request
@@ -20,7 +20,7 @@ class FileManager:
 
     def load_config(self):
         if self.storage_type == constant.STORAGE_TYPE_CLOUDINARY:
-            config = asset.AssetConfiguration(None)
+            config = AssetConfiguration(None)
             cloud_name = config.cloud_name
             api_key = config.api_key
             api_secret = config.api_secret

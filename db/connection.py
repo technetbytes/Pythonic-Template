@@ -1,13 +1,14 @@
 from  utilities import constant
-from config import database
+from config.database import DatabaseConfiguration
 
 class ConnectionString:
     '''Provider database connection string'''
+    
     def __init__(self,db_type):
         self.type = db_type
     
     def get_connection(self):
-        db_config = database.DatabaseConfiguration(None)
+        db_config = DatabaseConfiguration(None)
         SERVER_ADDRESS = db_config.host
         DATABASE_NAME = db_config.db_name
         DRIVER_NAME = db_config.driver
