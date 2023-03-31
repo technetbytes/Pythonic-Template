@@ -6,7 +6,7 @@ pyodbc==4.0.22
 sqlalchemy==1.2.1
 
 ## Cache
-redis==3.4.0
+redis==4.4.4
 
 ## Test Dependencies
 #unittest==0.0.0
